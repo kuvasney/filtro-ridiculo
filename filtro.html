@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Filtro</title>
+        <link rel="stylesheet" href="filtro.css">
+    </head>
+
+    <body>    
+        <h2>FILTRO</h2>
+        <div class="filter__form">
+            <div class="filter__item">
+                <label for="">Category</label>
+                <select name="category" id="category">
+                    <option value="0">Selecione</option>
+                </select>
+            </div>
+            <div class="filter__item">
+                <label for="">Type</label>
+                <select name="type" id="type">
+                    <option value="0">Selecione</option>
+                </select>
+            </div>
+            <div class="filter__item">                
+                <button id="filter__button" onclick="filter()">
+                    Filter
+                </button>
+            </div>
+        </div>
+        <ul class="filter__itens">
+
+        </ul>
+        <script src="filtro.js"></script>
+    </body>
+    
+</html>

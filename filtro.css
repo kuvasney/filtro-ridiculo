@@ -1,0 +1,19 @@
+.filter__form, .filter__itens {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter__form {
+    justify-content: space-between;
+    width: 50%;
+}
+
+.filter__itens {
+    flex-wrap: wrap;
+}
+
+.filter__itens li {
+    margin: 10px;
+    border: 1px solid gray;
+    list-style: none;
+}
