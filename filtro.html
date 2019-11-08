@@ -11,28 +11,34 @@
 
     <body>    
         <h2>FILTRO</h2>
-        <div class="filter__form">
-            <div class="filter__item">
-                <label for="">Category</label>
-                <select name="category" id="category">
-                    <option value="0">Selecione</option>
-                </select>
+        <div class="filtro">
+            <div class="filter__form">
+                <div class="filter__item">
+                    <label for="">Category</label>
+                    <select name="category" id="category">
+                        <option value="0">Selecione</option>
+                    </select>
+                </div>
+                <div class="filter__item">
+                    <label for="">Type</label>
+                    <select name="type" id="type">
+                        <option value="0">Selecione</option>
+                    </select>
+                </div>
+                <div class="filter__item">
+                    <label class="hidetext">Filter</label>
+                    <button class="filter__button" onclick="filter()">
+                        Filter
+                    </button>
+                </div>
             </div>
-            <div class="filter__item">
-                <label for="">Type</label>
-                <select name="type" id="type">
-                    <option value="0">Selecione</option>
-                </select>
-            </div>
-            <div class="filter__item">                
-                <button id="filter__button" onclick="filter()">
-                    Filter
-                </button>
-            </div>
-        </div>
-        <ul class="filter__itens">
+            <ul class="filter__itens">
+    
+            </ul>
+            <ul class="pagination">
 
-        </ul>
+            </ul>
+        </div>
         <script src="filtro.js"></script>
     </body>
     
