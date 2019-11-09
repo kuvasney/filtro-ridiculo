@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: normal 12px/1 'Montserrat';
+}
 
 .filter__form, .filter__itens {
     display: flex;
@@ -12,20 +18,26 @@
 
 .filter__item label {
     display: block;
-    font-size: .8em;
+    font: bold 12px/15px 'Montserrat';
+    color: #333;
+    margin-bottom: 5px;
 }
 
 .filter__item select {
-    border: 1px solid #CCC;
+    border: 1px solid #D8D8D8;
+    color: #6F6F6F;
     background-color: transparent;
     padding: 10px;
+    font: normal 14px/18px Montserrat;
 }
 
 .filter__button {
     background-color: #FEC40B;
-    color: #3f3c30;
+    color: #333;
     border: 0;
-    padding: 10px;
+    padding: 7px 10px;
+    font: bold 12px/15px Montserrat;
+    text-transform: uppercase;
 }
 
 .filter__itens {
@@ -37,7 +49,7 @@
     margin: 15px 10px;
     list-style: none;
     min-width: 290px;
-    box-shadow: 0px 3px 5px #CCC;
+    box-shadow: 0px 3px 6px #00000029;
 }
 
 .filter__itens li .img {
@@ -61,25 +73,25 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    display: inline-block;
     background-color: #FEC40B;
-    color: #3f3c30;
+    font: Bold 12px/15px Montserrat;
+    color: #333333;
     text-transform: uppercase;
-    padding: 14px;
-    font-size: .8em;
+    padding: 4px 8px;
 }
 .filter__itens li .content {
     padding: 15px;
 }
 .filter__itens li .type {
-    font-size: .8em;
-    font-style: italic;
+    font: normal italic 11px/14px Montserrat;
     color: #333;
     margin: 15px 0;
 }
 
 .filter__itens li .maintitle,
 .filter__itens li .maintitle a {
-    font-weight: bold;
+    font: bold 16px/19px Montserrat;
     color: #fec40b;
     text-decoration: none;
 }
@@ -89,17 +101,30 @@
     text-align: center;
 }
 
-.pagination li {
+.pagination li.navItem {
     display: inline-block;
     color: #fec40b;
+    font: bold 12px/15px Montserrat;
     margin-right: 5px;
     cursor: pointer;
 }
 
-.pagination li::after {
+.pagination li.navItem::after {
     content: '.';
 }
 
 .pagination li.on {
     color: #333;
+}
+
+.pagination .bystep {
+    background-color: #FEC40B;
+    color: #333;
+    border: 0;
+    padding: 7px 10px;
+    font: bold 12px/15px Montserrat;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
 }

@@ -120,7 +120,8 @@ const itensSpecs = {
     start: 0,
     end: 6,
     limit: 6,
-    page: 1
+    page: 1,
+    totalPages: Number
 }
 
 function filter() {
@@ -148,7 +149,9 @@ function filter() {
         filteredItens = filteredItens.filter(function (item) {
             return item.type == typesFilter
         })
-    }    
+    }
+
+
 
     // PERCORRO OS ITENS JÁ FILTRADOS
     if (filteredItens.length > 0) {
@@ -241,16 +244,17 @@ function pagination (total) {
     // // CRIO A PAGINACAO, CASO NECESSARIA
     if (total > itensSpecs.limit) {
         document.querySelector('.pagination').innerHTML = '';
-        let pageNumbers = '';
-        pageNumbers = Math.ceil(total / itensSpecs.limit);
-        for (let j = 1; j <= pageNumbers; j++) {
-            document.querySelector('.pagination').innerHTML += `<li class="${j == itensSpecs.page ? 'on' : ''}">${j}</li>`
+        itensSpecs.totalPages = Math.ceil(total / itensSpecs.limit);
+        document.querySelector('.pagination').innerHTML += `<span class="bystep previous">&lt; PREV</span>`
+        for (let j = 1; j <= itensSpecs.totalPages; j++) {
+            document.querySelector('.pagination').innerHTML += `<li class="navItem ${j == itensSpecs.page ? 'on' : ''}">${j}</li>`
         }
+        document.querySelector('.pagination').innerHTML += `<span class="bystep next">NEXT &gt;</span>`
         create();
     }
 
     function create() {
-        let paginationItens = document.querySelectorAll('.pagination li');
+        let paginationItens = document.querySelectorAll('.pagination li.navItem');
         paginationItens.forEach(function(p) {
             p.addEventListener('click', function(){
                 itensSpecs.page = parseInt(p.textContent);
@@ -258,6 +262,26 @@ function pagination (total) {
                 itensSpecs.start = itensSpecs.end - itensSpecs.limit;
                 filter();
             }) 
+        })
+
+        document.querySelector('.bystep.previous').addEventListener('click', function(){
+            console.log('itensSpecs.totalPages ', itensSpecs.totalPages)
+            console.log('itensSpecs.pages ', itensSpecs.page - 1)
+            if (itensSpecs.page > 1) {
+                itensSpecs.page--
+                itensSpecs.end = itensSpecs.page * itensSpecs.limit;
+                itensSpecs.start = itensSpecs.end - itensSpecs.limit;
+                filter();
+            }
+        })
+
+        document.querySelector('.bystep.next').addEventListener('click', function () {
+            if (itensSpecs.totalPages !== itensSpecs.page) {
+                itensSpecs.page++
+                itensSpecs.end = itensSpecs.page * itensSpecs.limit;
+                itensSpecs.start = itensSpecs.end - itensSpecs.limit;
+                filter();
+            }
         })
     }
 
